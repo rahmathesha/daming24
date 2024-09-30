@@ -42,7 +42,7 @@ test <- dummi_fix[-acak,]
 
 # Uji ragam-peragam
 library(MVTests)
-BoxM(data= train[,c(1:5)], group= train[,8])
+BoxM(data= train[,-2], group= train[,2]) #kolom Tertarik
 
 #Linear Discriminant
 library(MASS)
