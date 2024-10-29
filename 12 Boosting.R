@@ -27,7 +27,11 @@ set.seed(1001)
 boost1 = boosting(Tertarik~., data = train, mfinal = 5,
                   control = rpart.control(maxdepth = 1), 
                   coeflearn = 'Freund')
+# Contoh stump
 boost1$trees[3]
+
+# identifikasi prediktor yang besar pengaruhnya
+sort(boost1$importance)
 
 pred_boost1 = predict(boost1, test)$class
 
