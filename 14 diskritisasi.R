@@ -56,17 +56,6 @@ boxplot(dt_graph$x ~ dt_graph$class,
         ylab = "x",
         las = 1)
 
-
-
-library(classInt)
-eqwidth <- classIntervals(dt_lahir$lwt, style = "equal", 4)
-berat_diskrit <- cut(dt_lahir$lwt, breaks = eqwidth$brks)
-
-crosstab <- table(berat_diskrit, kat)
-persen <- prop.table(crosstab, margin = 1)
-barplot(t(persen))
-
-
 library(ggridges)
 library(ggplot2)
  
